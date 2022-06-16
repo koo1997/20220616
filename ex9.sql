@@ -1,4 +1,4 @@
---COUNT
+--COUNT  
 
 
 select count(*)
@@ -6,7 +6,7 @@ from ex9;--*==전체 로우 수 ,null값 포함
 
 
 select count(sol1)
-from ex9;--==sol1 로우수, null값 포함?
+from ex9;--==sol1 로우수, null값 포함???
 
 
 select count(distinct sol1)
