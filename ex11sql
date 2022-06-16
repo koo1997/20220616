@@ -1,0 +1,28 @@
+--GROUP BY
+
+
+select department_id,sum(salary)
+from employees
+group by department_id
+order by department_id
+
+--                    합계
+--DEPARTMENT_ID SUM(SALARY)
+--------------- -----------
+--           10        4400
+--           20       19000
+--           30       24900
+--           40        6500
+--           50      156400
+--           60       28800
+--           70       10000
+--           80      304500
+--           90       58000
+--          100       51608
+--          110       20308
+--
+--DEPARTMENT_ID SUM(SALARY)
+--------------- -----------
+--                     7000
+--
+--12개 행이 선택되었습니다. 

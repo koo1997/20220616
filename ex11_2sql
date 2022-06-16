@@ -1,0 +1,51 @@
+--HAVING
+--필터조건
+
+
+
+--select period, region,sum(loan_jan_amt) tot_jan
+--from kor_loan_status
+--where period = '201311'
+--group by  region,period
+--order by region;
+
+
+--PERIOD REGION        TOT_JAN
+-------- ---------- ----------
+--201311 강원          18352.8
+--201311 경기         282816.4
+--201311 경남          56556.1
+--201311 경북          31922.9
+--201311 광주          25771.8
+--201311 대구          42813.2
+--201311 대전          31119.1
+--201311 부산          69257.4
+--201311 서울         334062.7
+--201311 세종           4264.8
+--201311 울산          21488.8
+--
+--PERIOD REGION        TOT_JAN
+-------- ---------- ----------
+--201311 인천            70129
+--201311 전남          20312.7
+--201311 전북          26061.7
+--201311 제주           7230.3
+--201311 충남          32669.7
+--201311 충북          20528.8
+--
+--17개 행이 선택되었습니다. 
+
+
+
+
+select period, region,sum(loan_jan_amt) tot_jan
+from kor_loan_status
+where period = '201311'
+group by period, region
+having sum(loan_jan_amt)>100000
+order by region;
+
+PERIOD REGION        TOT_JAN
+------ ---------- ----------
+201311 경기         282816.4
+201311 서울         334062.7
