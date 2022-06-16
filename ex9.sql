@@ -1,3 +1,6 @@
+--COUNT
+
+
 select count(*)
 from ex9;--*==전체 로우 수 ,null값 포함
 
