@@ -1,0 +1,54 @@
+--분할 ROLLUP
+--전체 합계XX
+
+
+--select period,gubun,sum(loan_jan_amt) totl_jan
+--from kor_loan_status
+--where period like '2013%'
+--group by period,rollup(gubun);
+
+--PERIOD GUBUN                            TOTL_JAN
+-------- ------------------------------ ----------
+--201310 기타대출                           676078
+--201310 주택담보대출                     411415.9
+--201310                                 1087493.9
+--201311 기타대출                         681121.3
+--201311 주택담보대출                     414236.9
+--201311                                 1095358.2
+--
+--6개 행이 선택되었습니다. 
+
+select period,gubun,sum(loan_jan_amt) totl_jan
+from kor_loan_status
+where period like '2013%'
+group by rollup(period),gubun;
+
+--PERIOD GUBUN                            TOTL_JAN
+-------- ------------------------------ ----------
+--201310 기타대출                           676078
+--201311 기타대출                         681121.3
+--       기타대출                        1357199.3
+--201310 주택담보대출                     411415.9
+--201311 주택담보대출                     414236.9
+--       주택담보대출                     825652.8
+--
+--6개 행이 선택되었습니다. 
+
+select period,gubun,sum(loan_jan_amt) totl_jan
+from kor_loan_status
+where period like '2013%'
+group by rollup (gubun),period;
+
+
+--PERIOD GUBUN                            TOTL_JAN
+-------- ------------------------------ ----------
+--201310 기타대출                           676078
+--201310 주택담보대출                     411415.9
+--201310                                 1087493.9
+--201311 기타대출                         681121.3
+--201311 주택담보대출                     414236.9
+--201311                                 1095358.2
+--
+--6개 행이 선택되었습니다. 
+
+
