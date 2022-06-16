@@ -1,0 +1,13 @@
+--VARIANCE=분산  STDDEV=표준 편차
+--VARIANCE==STDDEV^2   
+
+
+
+select variance(salary),stddev(salary)
+from employees;
+
+
+--VARIANCE(SALARY) STDDEV(SALARY)
+------------------ --------------
+--      15284813.7     3909.57973
+
